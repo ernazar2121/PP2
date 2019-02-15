@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Task2
 {
@@ -11,40 +12,33 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            StreamReader sr = new StreamReader("C:\\input.txt");
-            String s = sr.ReadToEnd();
-            Console.WriteLine(s);
-            //  Console.ReadKey();
-
-
-            string[] arr = s.Split();
-
-
-            string ss = "";
-            for (int j = 0; j < arr.Length; j++)
+            string s = ""; //Create null string
+            string t = @"C:\Users\maira\Desktop\PP2\week2\Task2\task2_input.txt"; //Read way to file
+            StreamReader file = new StreamReader(t); //Read text in file
+            string line = file.ReadLine(); //line equal text in file
+            string[] arr = Regex.Split(line, " "); //Create string array without " "
+            int x;
+            foreach (string i in arr) //Check all number in array palindrome or not
             {
-                int n = int.Parse(arr[j]);
-                bool isPrime = true;
-                for (int i = 2; i <= Math.Sqrt(n); i++)
+                x = int.Parse(i); //Create string to int
+                for (int z = 2; z <= Math.Sqrt(x); ++z) //Check palindrome or not
                 {
-                    if (n % i == 0)
+                    if (x % z == 0)
                     {
-                        isPrime = false;
+                        x = 0;
                         break;
                     }
                 }
-
-                if (n != 1 && isPrime)
+                if (x > 1)
                 {
-
-                    ss += Convert.ToString(n) + " ";
+                    s += i;
+                    s += " ";
 
                 }
             }
-
-            StreamWriter sw = new StreamWriter("C:\\output.txt");
-            sw.WriteLine(ss);
-            sw.Close();
+            file.Close(); //Close file
+            string t2 = @"C:\Users\maira\Desktop\PP2\week2\Task2\output.txt"; //Read way to textfile where we input our numbers
+            File.WriteAllText(t2, s); //write in second file prime numbers
         }
-        }
+    }
 }

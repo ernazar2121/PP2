@@ -5,3 +5,10 @@ C:\Users\acer optane\Desktop\Week2\Week2\Task2\Task2\obj\Debug\Task2.csprojAssem
 C:\Users\acer optane\Desktop\Week2\Week2\Task2\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
 C:\Users\acer optane\Desktop\Week2\Week2\Task2\Task2\obj\Debug\Task2.exe
 C:\Users\acer optane\Desktop\Week2\Week2\Task2\Task2\obj\Debug\Task2.pdb
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\bin\Debug\Task2.exe.config
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\bin\Debug\Task2.exe
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\bin\Debug\Task2.pdb
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\obj\Debug\Task2.csprojAssemblyReference.cache
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\obj\Debug\Task2.exe
+C:\Users\maira\Desktop\PP2\week2\Task2\Task2\obj\Debug\Task2.pdb

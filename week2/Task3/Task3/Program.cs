@@ -1,43 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace Task3
 {
     class Program
     {
-        static void PrintSpaces(int level)
+        public static void LvLUp(int lvl) //print " "
         {
-            for (int i = 0; i < level; i++)
-                Console.Write("  ");
-        }
-        static void FD(DirectoryInfo directory, int level)
-        {
-            FileInfo[] files = directory.GetFiles();
-            DirectoryInfo[] directories = directory.GetDirectories();
-
-            foreach (FileInfo file in files)
+            for (int i = 0; i <= lvl; ++i)
             {
-                PrintSpaces(level);
-                Console.WriteLine(file.Name);
+                Console.Write(" ");
             }
-
-            foreach (DirectoryInfo d in directories)
+        }
+        public static void DirWr(DirectoryInfo dirInfo, int lvl) //create function
+        {
+            foreach (var i in dirInfo.GetFiles()) //print all files in directory with " "
             {
-                PrintSpaces(level);
-                Console.WriteLine(d.Name);
-                FD(d, level + 1);
+                LvLUp(lvl);//print " "
+                Console.WriteLine(i.Name);
+            }
+            foreach (var i in dirInfo.GetDirectories())//print all directories
+            {
+                LvLUp(lvl);//print" "
+                Console.WriteLine(i.Name);
+                DirWr(i, lvl + 3);//print all files and directories in directory with lvl + 3(recursion)
             }
         }
         static void Main(string[] args)
         {
-            DirectoryInfo d = new DirectoryInfo("C:/Users/acer optane/Desktop/PP2labs/Week1");
-            FD(d, 0);
-            Console.ReadKey();
-
+            DirectoryInfo dirInfo = new DirectoryInfo(Console.ReadLine());//Read way to our directory
+            Console.WriteLine(dirInfo.Name);//Write Directory Name
+            DirWr(dirInfo, 0);
         }
     }
 }

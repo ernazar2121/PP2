@@ -10,8 +10,8 @@ namespace Task1
     {
         
         
-            public static bool Palindrome(string s)
-            {
+            public static bool Palindrome(string s)// check palindrom or not
+        {
                 for (int i = 0, j = s.Length - 1; i < j; i++, j--)
                 if (s[i] != s[j])
                     return false;
@@ -21,11 +21,11 @@ namespace Task1
         
         static void Main(string[] args)
         {
-            string s;
+            string s; //created string
             s = Console.ReadLine();
-            if (Palindrome(s))
-        
-            
+            if (Palindrome(s)) //check palindrome line or not with cycle
+
+
                 Console.WriteLine("Yes");
             
             else
