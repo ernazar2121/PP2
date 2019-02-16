@@ -1,29 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
-namespace Task2
+namespace Ex6
 {
     class Student
     {
         public string name;
-        public string id;
-        public int year_of_study;
+        public string surname;
+        public int yos;
 
+        public Student()
+        {
+
+            name = Console.ReadLine();
+            surname = Console.ReadLine();
+            yos = int.Parse(Console.ReadLine());
+        }
+        public Student(string name, string surname, int yos)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.yos = yos;
+        }
+
+
+
+        public override string ToString()
+        {
+            return name + " " + surname + " " + yos;
+        }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Student s = new Student();
-            s.name = Convert.ToString(Console.ReadLine());
-            s.id = Convert.ToString(Console.ReadLine());
-            s.year_of_study = int.Parse(Console.ReadLine());
-            Console.Write(s.name + " " + s.id + " " + s.year_of_study + " ");
+            Student Erna = new Student("Ernazar", "Idrissov", 4);
+            Console.WriteLine(Erna);
+            Console.WriteLine("Erna next yos:" + (Erna.yos + 1));
+            Console.ReadKey();
+
         }
-
-
     }
-} 
+}
