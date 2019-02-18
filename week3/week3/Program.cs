@@ -16,7 +16,7 @@ namespace FarManager
     class Layer //Create Class
     {
         public int begin = 0;
-        public int end = 10;
+        public int end = 20;
         public FileSystemInfo[] Content //Create array with "FileSystemInfo" type
         {
             get;
@@ -31,13 +31,13 @@ namespace FarManager
         {
             if (SelectedIndex < 0)
             {
-                if (Content.Length < 10)
+                if (Content.Length < 20)
                 {
                     SelectedIndex = Content.Length - 1;
                 }
                 else
                 {
-                    begin = Content.Length - 10;
+                    begin = Content.Length - 20;
                     SelectedIndex = Content.Length - 1;
                     end = Content.Length;
                 }
@@ -55,7 +55,7 @@ namespace FarManager
             if (SelectedIndex == Content.Length)
             {
                 begin = 0;
-                end = 10;
+                end = 20;
                 SelectedIndex = 0;
             }
             Console.ResetColor();

@@ -13,7 +13,7 @@ namespace Task2
         static void Main(string[] args)
         {
             string s = ""; //Create null string
-            string t = @"C:\Users\maira\Desktop\PP2\week2\Task2\task2_input.txt"; //Read way to file
+            string t = @"C:\Users\maira\Desktop\PP2\week2\Task2\task2.txt"; //Read way to file
             StreamReader file = new StreamReader(t); //Read text in file
             string line = file.ReadLine(); //line equal text in file
             string[] arr = Regex.Split(line, " "); //Create string array without " "
@@ -21,7 +21,7 @@ namespace Task2
             foreach (string i in arr) //Check all number in array palindrome or not
             {
                 x = int.Parse(i); //Create string to int
-                for (int z = 2; z <= Math.Sqrt(x); ++z) //Check palindrome or not
+                for (int z = 2; z*z<=x; ++z) //Check palindrome or not
                 {
                     if (x % z == 0)
                     {
